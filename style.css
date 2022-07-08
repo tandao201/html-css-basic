@@ -1,5 +1,10 @@
+@font-face {
+    font-family: svnBulgary;
+    src: url(./static/SVN-Bulgary.otf);
+}
+
 body {
-    font-family: arial;
+    font-family: "Open Sans";
 }
 
 * {
@@ -55,6 +60,7 @@ body {
 .navbar-custom {
     background-color: white;
     height: 100%;
+    margin-bottom: 0;
 }
 
 
@@ -62,23 +68,33 @@ body {
     display: inline;
 }
 
+
+
 .nav-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     text-decoration: none;
-    color: #595959;
-    margin-right: 40px;
+    color: #030303;
     height: 100%;
     text-align: center;
     font-weight: 600;
+    margin-left: 10px;
+}
 
+.nav-svg-icon {
+    color: #fc8c14;
 }
 
 .nav-links {
+    width: 1170px;
     margin-bottom: 0;
 }
 
 .menu {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     vertical-align: baseline;
     font-size: 18px;
     height: 57px;
@@ -88,21 +104,27 @@ body {
 .menu li {
     list-style: none;
     height: 100%;
-    padding: 15px;
+    width: 17%;
 }
 
 .menu li a {
     height: 100%;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 1.5;
 }
 
-.menu li a i{
+.menu li a i {
     margin-right: -17px;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .active {
@@ -114,15 +136,25 @@ body {
     color: #fc8c14;
 }
 
+.active>svg path {
+    fill: #fc8c14;
+}
 
 .nav-link.item {
     color: black;
 }
+
+.menu-item:hover svg path,
+.menu-item:hover a {
+    fill: #fc8c14;
+    color: #fc8c14;
+}
+
 .nav-item:hover {
     color: #fc8c14;
 }
 
-.nav-item > a:hover {
+.nav-item>a:hover {
     color: #fc8c14;
 }
 
@@ -130,7 +162,7 @@ body {
     color: #fc8c14;
 }
 
-.container {
+.container_custom {
     display: inline;
 }
 
@@ -151,8 +183,8 @@ body {
 .suggest {
     font-size: 20px;
     border-radius: 7px;
-    width: 390px;
-    height: 450px;
+    width: 441px;
+    height: 444px;
     position: absolute;
     top: 10%;
     left: 10%;
@@ -161,6 +193,7 @@ body {
 }
 
 .suggest_top {
+    height: 48px;
     padding: 10px;
     color: black;
     text-align: center;
@@ -171,14 +204,14 @@ body {
 
 .suggest_bot {
     position: relative;
-    top: -3%;
-    left: 4.5%;
-    padding: 15px;
+    top: -2%;
+    left: 5.5%;
 }
 
-.item_bg , .suggest-img {
-    width: 330px;
-    height: 100px;
+.item_bg,
+.suggest-img {
+    width: 397px;
+    height: 101px;
     border-radius: 8px;
     margin-bottom: 10px;
     object-fit: cover;
@@ -201,19 +234,17 @@ body {
     right: 0;
     left: 0;
     border-radius: 8px;
-    background: linear-gradient(90deg,#002540 1.52%,rgba(0,37,64,.06));
+    background: linear-gradient(90deg, #002540 1.52%, rgba(0, 37, 64, .06));
 }
 
-.item_bg img {
-}
 
 .item_text {
-    font-size: 33px;
+    font-size: 48px;
     top: 10%;
     left: 10%;
     position: relative;
     z-index: 3;
-    font-family: 'Pacifico', cursive;
+    font-family: svnBulgary;
 }
 
 .suggest_item {
@@ -251,12 +282,15 @@ body {
 
 .title {
     font-weight: bolder;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .description {
     margin-top: 8px;
     font-weight: lighter;
     max-width: 300px;
+    font-size: 14px;
 }
 
 /* question */
@@ -274,7 +308,12 @@ body {
 }
 
 .question-content {
+    font-weight: 600;
     transition: clip 5s ease-out;
+}
+
+.collapse {
+    font-weight: 500;
 }
 
 /* footer */
@@ -291,12 +330,18 @@ body {
 }
 
 .certification {
+    margin-top: 8px;
     width: 160px;
 }
 
-.ft-row {
-    
+.ft-text>p {
+    margin-bottom: 10px;
 }
+
+.ft-btn {
+    margin: 0;
+}
+
 
 .contact {
     color: inherit;
@@ -313,14 +358,16 @@ body {
 }
 
 
-@media(max-width:1095px){
-    .header_top, .header_bot {
+@media(max-width:1095px) {
+
+    .header_top,
+    .header_bot {
         display: none;
     }
 
     .header_mobile {
         height: 50px;
-        visibility: visible;
+        display: block;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -334,7 +381,7 @@ body {
         margin-right: 10%;
     }
 
-    .container {
+    .container_custom {
         height: 100%;
     }
 
@@ -366,7 +413,8 @@ body {
         background-color: white;
     }
 
-    .item_bg , .suggest-img {
+    .item_bg,
+    .suggest-img {
         width: 94%;
         height: 100px;
         border-radius: 8px;
