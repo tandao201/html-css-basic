@@ -23,6 +23,10 @@ body {
     align-items: center;
 }
 
+.header_mobile {
+    display: none;
+}
+
 .btn-log {
     background: none;
     border-radius: 5px;
@@ -310,8 +314,28 @@ body {
 
 
 @media(max-width:1095px){
-    .header_top {
+    .header_top, .header_bot {
         display: none;
+    }
+
+    .header_mobile {
+        height: 50px;
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_mobile .icon-menu {
+        margin-left: 5%;
+    }
+
+    .header_mobile .phone {
+        margin-right: 10%;
+    }
+
+    .container {
+        height: 100%;
     }
 
     .navbar-brand {
